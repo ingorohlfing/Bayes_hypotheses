@@ -1,5 +1,11 @@
-#' ## Multiple non-exclusive hypotheses in Bayesianism  
-#' **Ingo Rohlfing**
+#' ---
+#' title: ""
+#' author: Ingo Rohlfing
+#' output:
+#'    pdf_document
+#' ---
+
+#' ## Ingo Rohlfing: Multiple non-exclusive hypotheses in Bayesianism  
 #' 
 #' In this post, I briefly illustrate for the discrete version of Bayes'
 #' theorem the implications of working with multiple non-exclusive 
