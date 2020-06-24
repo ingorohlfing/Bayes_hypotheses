@@ -114,7 +114,16 @@ ggVennDiagram(carbike) +
 #' $p(H_B \cap \lnot H_A)$ that only hypothesis B is correct;
 #'  $p(H_A \cap H_B)$ that both hypotheses are correct and both variables 
 #'  (or conditions or mechanisms) play a role. $H_0$ completes the setting
-#'  and is the same as $p(\lnot H_A \cap \lnot H_B)$,
+#'  and is the same as $p(\lnot H_A \cap \lnot H_B)$.
+#'  
+#'  Now one might say, I am not interested in the estimation part of 
+#'  a Bayesian analysis (the posteriors for theoretical arguments), but in the
+#'  likelihoods and the testing part where one assesses the strength of evidence 
+#'  (which has been the main focus in the process tracing literature).
+#'  The issue is the same here: When you want to make arguments about the 
+#'  evidential strength of an observation for the hypothesis $H_A \cap \lnot H_B$, you need to compare the
+#'  likelihood for the hypothesis $H_A \cap \lnot H_B$ against $H_A \cap H_B$, and separately 
+#'  against $H_B \cap \lnot H_A$ and against $\lnot H_A \cap \lnot H_B$.
 #'  
 #' ### The scale of the issue
 #' The simple car-bike example indicates that the challenges of prior specification
@@ -122,7 +131,7 @@ ggVennDiagram(carbike) +
 #' means that we have to specify four priors instead of two; we have eight priors when
 #' we add a third non-exclusive hypothesis. You might see where this
 #' is going: The number of priors increases
-#' *exponentially* with 2^H, where $H$ is the number of hypotheses. If some, but not
+#' *exponentially* with $2^H$, where $H$ is the number of hypotheses. If some, but not
 #' all hypotheses are exclusive, the number is somewhere between the number of
 #' hypotheses, including $H_0$, and $H$.  
 #' Let us add one type of ownership to the example to see how the Venn diagram
