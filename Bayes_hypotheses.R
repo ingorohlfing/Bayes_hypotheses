@@ -124,9 +124,25 @@ ggVennDiagram(carbike) +
 #' is going: The number of priors increases
 #' *exponentially* with 2^H, where $H$ is the number of hypotheses. If some, but not
 #' all hypotheses are exclusive, the number is somewhere between the number of
-#' hypotheses, including $H_0$, and $H$.
-#' 
-#' All this certainly does not invalidate Bayesian process tracing as an approach and its
+#' hypotheses, including $H_0$, and $H$.  
+#' Let us add one type of ownership to the example to see how the Venn diagram
+#' gets larger and the number of combinations increases exponentially. We add
+#' a third type 'e-scooter' ownership and are not interested in who either owns
+#' a car, or a bike or an e-scooter. 
+#+ message = F, warning = F
+carbikeesc <- list(car = 1:6, bike = 2:7, escooter = c(2:3, 7:8))
+ggVennDiagram(carbikeesc) +
+  theme(legend.position = "none") + 
+  scale_fill_gradient(low = "white", high = "gray") 
+
+#' We now have seven types of ownership plus the possibility that someone owns
+#' neither of the three devices. A naive analysis would again add the total number of
+#' owners per device, which is 16. From the total number of 16, we would need to 
+#' subtract the number of owners that we counted multiple times: the car-bike owners (5),
+#' the car-bike-escooter owners (2) and the bike-escooter owners (3). This would 
+#' tell us that 8 people own some device and that the sampling probability is 0.8.
+#'
+#' All this certainly does *not* invalidate Bayesian process tracing as an approach and its
 #' use for empirical research. I only mean to show for one selected element
 #' what it requires to do process tracing that complies with Bayes' theorem.
 #' It quickly becomes demanding when we work with non-exclusive hypotheses
